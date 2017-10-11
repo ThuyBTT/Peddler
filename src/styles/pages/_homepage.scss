@@ -42,10 +42,14 @@
     z-index: 0;
 
     &:nth-child(n+1) {
-      zoom: 1.1;
+      .progress-dot {
+        zoom: 1.1;
+      }
     }
     &:last-child {
-      zoom: 1.5;
+      .progress-dot {
+        zoom: 1.5;
+      }
     }
     &:hover, &:focus {
       z-index: 10;
@@ -58,15 +62,16 @@
     }
 
     &.current-item {
-      zoom: 1.3;
-
       .progress-dot {
         background-color: lighten($color-progress-bar-bought, 10%);
         border-color: $color-progress-bar-bought;
         z-index: 9;
+        zoom: 1.3;
       }
       &:last-child {
-        zoom: 1.5;
+        .progress-dot {
+          zoom: 1.5;
+        }
       }
     }
   }
