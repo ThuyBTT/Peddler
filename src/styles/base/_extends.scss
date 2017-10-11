@@ -1,5 +1,66 @@
+/* heading */
 .main-title {
   color: #000;
   @include rem("font-size", 30);
   text-align: center;
+}
+
+/* elements */
+.info-content {
+  position: relative;
+  width: auto;
+  
+  .icon-info {
+    color: $color-icon-info;
+    @include rem("font-size", 18);
+    text-align: center;
+  }
+
+  .tip-content {
+    background-color: lighten($color-icon-info, 40%);
+    border: 1px solid $color-border;
+    @include roundedCorners(3px);
+    bottom: 100%;
+    color: #000;
+    display: none;
+    @include rem("font-size", 13);
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 200px;
+
+    &:after, &:before {
+      top: 100%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      border-color: transparent;
+      border-top-color: lighten($color-icon-info, 40%);
+      border-width: 6px;
+      margin-left: -6px;
+      right: 3px;
+    }
+
+    &:before {
+      border-color: transparent;
+      border-top-color: #cfcfcf;
+      border-width: 7px;
+      margin-left: -7px;
+      right: 2px;
+    }
+  }
+
+  &:hover ,&:focus {
+    .tip-content {
+      display: block;
+    }
+  }
 }

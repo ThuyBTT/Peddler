@@ -30,3 +30,10 @@
   .pb#{$i*5} { padding-bottom: #{$value}#{$unit} !important;}
   .pl#{$i*5} { padding-left: #{$value}#{$unit} !important;}
 }
+
+$elements: 7;
+@for $i from 0 to $elements {
+  .progress-list .progress-item:nth-child(#{$i}) {
+    z-index: #{7 - $i};
+  }
+}
