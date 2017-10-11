@@ -1,0 +1,5 @@
+.main-title {
+  color: #000;
+  @include rem("font-size", 30);
+  text-align: center;
+}
